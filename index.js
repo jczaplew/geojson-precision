@@ -21,10 +21,6 @@
       return m.map(poly);
     }
 
-    function multiLine(m) {
-      return m.map(multi);
-    }
-
     function geometry(obj) {
       switch (obj.type) {
         case "Point":
@@ -35,13 +31,11 @@
           obj.coordinates = multi(obj.coordinates);
           return obj;
         case "Polygon":
+        case "MultiLineString":
           obj.coordinates = poly(obj.coordinates);
           return obj;
         case "MultiPolygon":
           obj.coordinates = multiPoly(obj.coordinates);
-          return obj;
-        case "MultiLineString":
-          obj.coordinates = multiLine(obj.coordinates);
           return obj;
         default :
           throw new Error("Something went horrifically wrong");
