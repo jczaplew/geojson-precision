@@ -14,11 +14,7 @@
     }
 
     function poly(p) {
-      var c = []
-      for (var i = 0; i < p.length; i++) {
-        c.push(multi(p[i]));
-      };
-      return c;
+      return p.map(multi);
     }
 
     function multiPoly(m) {
