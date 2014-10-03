@@ -2,7 +2,9 @@
 Remove meaningless precision from your GeoJSON. If your coordinates go out to 7+ digits, you are [probably misrepresenting your data](http://gis.stackexchange.com/a/8674/14196). Most scenarios in which GeoJSON is useful (i.e. web-related applications) do not require survey-grade precision, and a higher value is placed on a compact file size. Trimming the precision of coordinates can greatly reduce file size, while removing the appearance of fake high precision.
 
 ## Install
-
+````
+npm install geojson-precision
+````
 
 ## API
 
@@ -38,6 +40,13 @@ var trimmed = gp.parse({
     ]
 }
 ````
+
+## Inspiration
+Concepts, ideas, etc borrowed to various degrees from:
+
+  - [wellknown](https://github.com/mapbox/wellknown/pull/18) 
+  - [LilJSON](https://github.com/migurski/LilJSON)
+
 
 ## License
 CC0
