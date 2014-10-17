@@ -1,6 +1,6 @@
 {
   "name": "geojson-precision",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Remove meaningless precision from GeoJSON",
   "main": "index.js",
   "dependencies": {},

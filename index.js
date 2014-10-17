@@ -1,5 +1,4 @@
 (function() {
-  var geojson_precision = {};
 
   function parse(t, precision) {
 
@@ -77,9 +76,8 @@
       
   }
 
-  geojson_precision.parse = parse;
-
-  module.exports = geojson_precision;
+  module.exports = parse;
+  module.exports.parse = parse;
 
 }());
   
