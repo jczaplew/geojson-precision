@@ -18,7 +18,7 @@ if (cli.args.length < 2) {
 } else {
 
   if (cli.args[0].indexOf("/") < 0) {
-    var inputPath = path.join(__dirname, cli.args[0]);
+    var inputPath = path.join(process.cwd(), cli.args[0]);
   } else {
     var inputPath = cli.args[0];
   }
@@ -30,11 +30,11 @@ if (cli.args.length < 2) {
     }
 
     if (cli.args[1].indexOf("/") < 0) {
-      var outPath = path.join(__dirname, cli.args[1]);
+      var outPath = path.join(process.cwd(), cli.args[1]);
     } else {
       var outPath = cli.args[1];
     }
-    
+
     fs.writeFile(outPath, JSON.stringify(gp.parse(JSON.parse(data), cli.precision)), function(error) {
       if (error) {
         console.error(error);
