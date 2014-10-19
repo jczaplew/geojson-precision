@@ -3,8 +3,14 @@ Remove meaningless precision from your GeoJSON. If your coordinates go out to 7+
 
 ## Install
 ````
-npm install geojson-precision
+npm install [-g] geojson-precision
 ````
+
+## CLI
+
+````geojson-precision -p 4 input.json output.json````
+
+
 
 ## API
 

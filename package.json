@@ -1,9 +1,11 @@
 {
   "name": "geojson-precision",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Remove meaningless precision from GeoJSON",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "commander": "^2.4.0"
+  },
   "devDependencies": {
     "assert": "^1.1.2",
     "geojsonhint": "^0.3.4",
@@ -12,13 +14,17 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "geojson-precision": "./bin/geojson-precision"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jczaplew/geojson-precision.git"
   },
   "keywords": [
     "geojson",
-    "precision"
+    "precision",
+    "geojson precision"
   ],
   "author": "John J Czaplewski <jczaplew@gmail.com>",
   "license": "CC0",
