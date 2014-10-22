@@ -36,6 +36,9 @@
         case "MultiPolygon":
           obj.coordinates = multiPoly(obj.coordinates);
           return obj;
+        case "GeometryCollection":
+          obj.geometries = obj.geometries.map(geometry);
+          return obj;
         default :
           throw new Error("Something went horrifically wrong");
       }
