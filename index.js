@@ -59,6 +59,10 @@
       return g;
     }
 
+    if (!t) {
+      return t;
+    }
+
     switch (t.type) {
       case "Feature":
         return feature(t);
@@ -74,7 +78,7 @@
       case "MultiLineString":
         return geometry(t);
       default :
-        throw new Error("GeoJSON object is invalid");
+        return t;
     }
       
   }

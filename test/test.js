@@ -145,3 +145,51 @@ describe("geometry collection", function() {
     });
   });
 });
+
+describe("null value", function() {
+  it("should return the same null value", function(done) {
+    var parsed = gp(tg.baddy_null, 4);
+
+    if (typeof(parsed) === "object")  {
+      done();
+    } else {
+      throw new Error("null value incorrectly returned");
+    }
+  });
+});
+
+describe("undefined value", function() {
+  it("should return the same thing value", function(done) {
+    var parsed = gp(tg.baddy_undefined, 5);
+
+    if (typeof(parsed) === "undefined") {
+      done()
+    } else {
+      throw new Error("Undefined value incorrectly returned");
+    }
+  });
+});
+
+describe("empty array", function() {
+  it("should return the same thing value", function(done) {
+    var parsed = gp(tg.empty, 5);
+
+    if (Array.isArray(parsed)) {
+      done();
+    } else {
+      throw new Error("Empty array incorrectly returned");
+    }
+  });
+});
+
+describe("bad object", function() {
+  it("should return the same thing value", function(done) {
+    var parsed = gp(tg.baddy_object, 5);
+
+    if (typeof(parsed) === "object")  {
+      done();
+    } else {
+      throw new Error("Bad object incorrectly returned");
+    }
+  });
+});

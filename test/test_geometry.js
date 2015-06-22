@@ -300,3 +300,9 @@ exports.geometryCollection = { "type": "GeometryCollection",
       }
     ]
   };
+
+exports.baddy_null = null;
+exports.baddy_undefined;
+exports.empty = [];
+exports.baddy_object = {"aKey": "aValue"};
+

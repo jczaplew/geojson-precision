@@ -10,6 +10,7 @@ npm install [-g] geojson-precision
 
 ## API
 
+
 ###.parse(*geojson*, *precision*)
 
 ````geojson```` is a valid GeoJSON object, and can be of type ````Point````, ````LineString````, ````Polygon````, ````MultiPoint````, ````MultiPolygon````, ````MultiLineString````, ````GeometryCollection````, ````Feature````, or ````FeatureCollection````. If you are unsure whether or not your GeoJSON object is valid, you can run it through a linter such as [geojsonhint](https://github.com/mapbox/geojsonhint).
