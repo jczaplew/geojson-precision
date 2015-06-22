@@ -193,3 +193,15 @@ describe("bad object", function() {
     }
   });
 });
+
+describe("null Feature geometry", function() {
+  it("should return the same thing value", function(done) {
+    var parsed = gp(tg.baddy_nogeom, 5);
+
+    if (typeof(parsed) === "object" && parsed["type"])  {
+      done();
+    } else {
+      throw new Error("Null feature geometry incorrectly returned");
+    }
+  });
+});

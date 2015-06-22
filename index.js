@@ -21,6 +21,10 @@
     }
 
     function geometry(obj) {
+      if (!obj) {
+        return {};
+      }
+      
       switch (obj.type) {
         case "Point":
           obj.coordinates = point(obj.coordinates);
@@ -40,7 +44,7 @@
           obj.geometries = obj.geometries.map(geometry);
           return obj;
         default :
-          throw new Error("Something went horrifically wrong");
+          return {};
       }
     }
 

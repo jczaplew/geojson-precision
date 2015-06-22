@@ -301,6 +301,7 @@ exports.geometryCollection = { "type": "GeometryCollection",
     ]
   };
 
+exports.baddy_nogeom = { type: "FeatureCollection", features: [ { type: "Feature", geometry: null, properties: {} } ] }
 exports.baddy_null = null;
 exports.baddy_undefined;
 exports.empty = [];
