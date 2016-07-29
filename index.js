@@ -4,7 +4,7 @@
 
     function point(p) {
       return p.map(function(e) {
-        return 1 * e.toFixed(precision);
+        return Math.round10(parseFloat(e), -precision).toFixed(precision);
       });
     }
 
