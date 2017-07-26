@@ -62,6 +62,9 @@ Geojson-precision can also be used via the command line. Especially easy to use 
 ######  precision (-p)
 A positive integer specifying coordinate precision
 
+######  extras precision (-e)
+A positive integer specifying extra coordinate precision for things like the z value when the coordinate is [longitude, latitude, elevation].
+
 ###### input
 An input GeoJSON file
 
