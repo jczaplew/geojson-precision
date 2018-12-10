@@ -11,7 +11,7 @@ npm install [-g] geojson-precision
 ## API
 
 
-###.parse(*geojson*, *precision*)
+### .parse(*geojson*, *precision*)
 
 ````geojson```` is a valid GeoJSON object, and can be of type ````Point````, ````LineString````, ````Polygon````, ````MultiPoint````, ````MultiPolygon````, ````MultiLineString````, ````GeometryCollection````, ````Feature````, or ````FeatureCollection````. If you are unsure whether or not your GeoJSON object is valid, you can run it through a linter such as [geojsonhint](https://github.com/mapbox/geojsonhint).
 
@@ -20,7 +20,7 @@ npm install [-g] geojson-precision
  
 ##### Example use:
 
-````
+````javascript
 var gp = require("geojson-precision");
 
 var trimmed = gp.parse({
@@ -35,7 +35,7 @@ var trimmed = gp.parse({
 
 ````trimmed```` will now look like this:
 
-````
+````javascript
 {
     "type": "Point",
     "coordinates": [
@@ -47,7 +47,7 @@ var trimmed = gp.parse({
 
  ````.parse()```` can also be used directly, for example:
  
- ````
+ ````javascript
 var gp = require("geojson-precision");
 
 var trimmed = gp({ ... }, 3);
@@ -58,7 +58,7 @@ var trimmed = gp({ ... }, 3);
 ## CLI
 Geojson-precision can also be used via the command line. Especially easy to use if installed globally (using ````-g````).
 
-###Parameters
+### Parameters
 ######  precision (-p)
 A positive integer specifying coordinate precision
 
