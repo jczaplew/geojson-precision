@@ -1,19 +1,22 @@
 {
   "name": "geojson-precision",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Remove meaningless precision from GeoJSON",
   "main": "index.js",
   "dependencies": {
-    "commander": "^2.4.0"
+    "commander": "2.19.0"
   },
   "devDependencies": {
-    "assert": "^1.1.2",
-    "geojsonhint": "^0.3.4",
-    "mocha": "^4.0.1",
-    "should": "^4.0.4"
+    "assert": "1.4.1",
+    "@mapbox/geojsonhint": "2.1.0",
+    "mocha": "5.2.0",
+    "should": "13.2.3"
   },
   "scripts": {
     "test": "mocha"
+  },
+  "engines": {
+    "node": ">=6.4.0"
   },
   "bin": {
     "geojson-precision": "./bin/geojson-precision"
