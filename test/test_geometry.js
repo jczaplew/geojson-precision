@@ -18,6 +18,15 @@ exports.point = {
         ]
       };
 
+exports.pointz = {
+        "type": "Point",
+        "coordinates": [
+          18.984375,
+          57.32652122521709,
+          123.4567890
+        ]
+      };
+
 exports.featureLinestring = {
       "type": "Feature",
       "properties": {},

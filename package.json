@@ -9,6 +9,7 @@
   "devDependencies": {
     "assert": "^1.1.2",
     "geojsonhint": "^0.3.4",
+    "mocha": "^4.0.1",
     "should": "^4.0.4"
   },
   "scripts": {

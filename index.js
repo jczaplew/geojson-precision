@@ -1,10 +1,14 @@
 (function() {
 
-  function parse(t, precision) {
+  function parse(t, coordinatePrecision, extrasPrecision) {
 
     function point(p) {
-      return p.map(function(e) {
-        return 1 * e.toFixed(precision);
+      return p.map(function(e, index) {
+        if (index < 2) {
+            return 1 * e.toFixed(coordinatePrecision);
+        } else {
+            return 1 * e.toFixed(extrasPrecision);
+        }
       });
     }
 

@@ -26,6 +26,18 @@ describe("point", function() {
   });
 });
 
+describe("pointz", function() {
+  it("should return valid GeoJSON with the specified precision", function(done) {
+    var zPrecision = 2;
+    var parsed = gp(tg.pointz, 3, zPrecision);
+    if (parsed.coordinates[2].toString() !== tg.pointz.coordinates[2].toFixed(zPrecision)) {
+      throw new Error("z coordinate precisions don't match");
+    } else {
+      done();
+    }
+  });
+});
+
 describe("feature point", function() {
   it("should return valid GeoJSON with the specified precision", function(done) {
     test(tg.featurePoint, 3, function(errors) {
