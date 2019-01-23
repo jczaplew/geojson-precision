@@ -15,15 +15,15 @@ npm install [-g] geojson-precision
 
 ````geojson```` is a valid GeoJSON object, and can be of type ````Point````, ````LineString````, ````Polygon````, ````MultiPoint````, ````MultiPolygon````, ````MultiLineString````, ````GeometryCollection````, ````Feature````, or ````FeatureCollection````. If you are unsure whether or not your GeoJSON object is valid, you can run it through a linter such as [geojsonhint](https://github.com/mapbox/geojsonhint).
 
-````precision```` is a positive integer. If your specified ````precision```` value is greater than the precision of the input geometry, the output precision will be the same as the input. For example, if your input coordinates are ````[10.0, 20.0]````, and you specify a ````precision```` of ````5````, the output will be the same as the input. 
+````precision```` is a positive integer. If your specified ````precision```` value is greater than the precision of the input geometry, the output precision will be the same as the input. For example, if your input coordinates are ````[10.0, 20.0]````, and you specify a ````precision```` of ````5````, the output will be the same as the input.
 
- 
+
 ##### Example use:
 
 ````javascript
-var gp = require("geojson-precision");
+const gp = require("geojson-precision");
 
-var trimmed = gp.parse({
+let trimmed = gp.parse({
         "type": "Point",
         "coordinates": [
           18.984375,
@@ -46,17 +46,17 @@ var trimmed = gp.parse({
 ````
 
  ````.parse()```` can also be used directly, for example:
- 
- ````javascript
-var gp = require("geojson-precision");
 
-var trimmed = gp({ ... }, 3);
+ ````javascript
+const gp = require("geojson-precision");
+
+let trimmed = gp({ ... }, 3);
 
 ````
 
 
 ## CLI
-Geojson-precision can also be used via the command line. Especially easy to use if installed globally (using ````-g````).
+Geojson-precision can also be used via the command line when installed globally (using ````-g````).
 
 ### Parameters
 ######  precision (-p)
@@ -82,9 +82,9 @@ geojson-precision -p 4 input.json output.json
 ## Inspiration
 Concepts, ideas, etc borrowed to various degrees from:
 
-  - [wellknown](https://github.com/mapbox/wellknown/pull/18) 
+  - [wellknown](https://github.com/mapbox/wellknown/pull/18)
   - [LilJSON](https://github.com/migurski/LilJSON)
 
 
 ## License
-CC0
+MIT
