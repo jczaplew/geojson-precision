@@ -1,6 +1,6 @@
 const assert = require("assert")
 const should = require("should")
-const geojsonhint = require("geojsonhint")
+const geojsonhint = require("@mapbox/geojsonhint")
 const gp = require("../index.js")
 const tg = require("./test_geometry.js")
 
