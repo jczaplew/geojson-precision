@@ -1,12 +1,12 @@
-var assert = require("assert"),
-    should = require("should"),
-    geojsonhint = require("geojsonhint"),
-    gp = require("../index.js"),
-    tg = require("./test_geometry.js");
+const assert = require("assert")
+const should = require("should")
+const geojsonhint = require("geojsonhint")
+const gp = require("../index.js")
+const tg = require("./test_geometry.js")
 
 function test(feature, precision, cb) {
-  var parsed = gp.parse(feature, precision),
-      errors = geojsonhint.hint(JSON.stringify(parsed));
+  let parsed = gp.parse(feature, precision)
+  let errors = geojsonhint.hint(JSON.stringify(parsed));
   if (errors.length) {
     cb(errors);
   } else {
@@ -14,9 +14,9 @@ function test(feature, precision, cb) {
   }
 }
 
-describe("point", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.point, 3, function(errors) {
+describe("point", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.point, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -26,10 +26,10 @@ describe("point", function() {
   });
 });
 
-describe("pointz", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    var zPrecision = 2;
-    var parsed = gp(tg.pointz, 3, zPrecision);
+describe("pointz", () => {
+  it("should return valid GeoJSON with the specified Z precision", (done) => {
+    let zPrecision = 2;
+    let parsed = gp(tg.pointz, 3, zPrecision);
     if (parsed.coordinates[2].toString() !== tg.pointz.coordinates[2].toFixed(zPrecision)) {
       throw new Error("z coordinate precisions don't match");
     } else {
@@ -38,9 +38,9 @@ describe("pointz", function() {
   });
 });
 
-describe("feature point", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.featurePoint, 3, function(errors) {
+describe("feature point", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.featurePoint, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -50,9 +50,9 @@ describe("feature point", function() {
   });
 });
 
-describe("feature linestring", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.featureLinestring, 3, function(errors) {
+describe("feature linestring", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.featureLinestring, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -62,9 +62,9 @@ describe("feature linestring", function() {
   });
 });
 
-describe("linestring", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.linestring, 3, function(errors) {
+describe("linestring", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.linestring, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -74,9 +74,9 @@ describe("linestring", function() {
   });
 });
 
-describe("multipoint", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.multipoint, 3, function(errors) {
+describe("multipoint", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.multipoint, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -86,9 +86,9 @@ describe("multipoint", function() {
   });
 });
 
-describe("polygon", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.polygon, 3, function(errors) {
+describe("polygon", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.polygon, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -98,9 +98,9 @@ describe("polygon", function() {
   });
 });
 
-describe("holy polygon", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.holyPolygon, 3, function(errors) {
+describe("holy polygon", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.holyPolygon, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -110,9 +110,9 @@ describe("holy polygon", function() {
   });
 });
 
-describe("multipolygon", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.multipoly, 3, function(errors) {
+describe("multipolygon", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.multipoly, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -122,9 +122,9 @@ describe("multipolygon", function() {
   });
 });
 
-describe("multi linestring", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.multilinestring, 3, function(errors) {
+describe("multi linestring", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.multilinestring, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -134,9 +134,9 @@ describe("multi linestring", function() {
   });
 });
 
-describe("feature collection", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.featureCollection, 3, function(errors) {
+describe("feature collection", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.featureCollection, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -146,9 +146,9 @@ describe("feature collection", function() {
   });
 });
 
-describe("geometry collection", function() {
-  it("should return valid GeoJSON with the specified precision", function(done) {
-    test(tg.geometryCollection, 3, function(errors) {
+describe("geometry collection", () => {
+  it("should return valid GeoJSON with the specified precision", (done) => {
+    test(tg.geometryCollection, 3, (errors) => {
       if (errors) {
         throw new Error(JSON.stringify(errors));
       } else {
@@ -158,8 +158,8 @@ describe("geometry collection", function() {
   });
 });
 
-describe("null value", function() {
-  it("should return the same null value", function(done) {
+describe("null value", () => {
+  it("should return the same null value", (done) => {
     var parsed = gp(tg.baddy_null, 4);
 
     if (typeof(parsed) === "object")  {
@@ -170,8 +170,8 @@ describe("null value", function() {
   });
 });
 
-describe("undefined value", function() {
-  it("should return the same thing value", function(done) {
+describe("undefined value", () => {
+  it("should return the same thing value", (done) => {
     var parsed = gp(tg.baddy_undefined, 5);
 
     if (typeof(parsed) === "undefined") {
@@ -182,8 +182,8 @@ describe("undefined value", function() {
   });
 });
 
-describe("empty array", function() {
-  it("should return the same thing value", function(done) {
+describe("empty array", () => {
+  it("should return the same thing value", (done) => {
     var parsed = gp(tg.empty, 5);
 
     if (Array.isArray(parsed)) {
@@ -194,8 +194,8 @@ describe("empty array", function() {
   });
 });
 
-describe("bad object", function() {
-  it("should return the same thing value", function(done) {
+describe("bad object", () => {
+  it("should return the same thing value", (done) => {
     var parsed = gp(tg.baddy_object, 5);
 
     if (typeof(parsed) === "object")  {
@@ -206,8 +206,8 @@ describe("bad object", function() {
   });
 });
 
-describe("null Feature geometry", function() {
-  it("should return the same thing value", function(done) {
+describe("null Feature geometry", () => {
+  it("should return the same thing value", (done) => {
     var parsed = gp(tg.baddy_nogeom, 5);
 
     if (typeof(parsed) === "object" && parsed["type"])  {

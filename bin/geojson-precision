@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-var gp = require("../index.js"),
-    fs = require("fs"),
-    path = require("path"),
-    cli = require("commander");
+const gp = require("../index.js")
+const fs = require("fs")
+const path = require("path")
+const cli = require("commander")
 
 cli
   .usage('[coordinatePrecision] [extrasPrecision] input output')
   .option("-p, --precision [coordinatePrecision]", "Output precision, defaults to 6", 6)
-  .option("-e, --extras-precision [extrasPrecision]", "Output precision for extra coordinates beyond x, y, defaults to 2", 2)
+  .option("-e, --extras-precision [extrasPrecision]", "Output precision for extra coordinates beyond X and Y, such as Z. Defaults to 2", 2)
   .parse(process.argv);
 
 if (cli.args.length < 2) {
