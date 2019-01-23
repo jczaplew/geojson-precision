@@ -28,7 +28,7 @@
     "geojson precision"
   ],
   "author": "John J Czaplewski <jczaplew@gmail.com>",
-  "license": "CC0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jczaplew/geojson-precision/issues"
   },
