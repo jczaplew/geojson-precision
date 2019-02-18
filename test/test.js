@@ -217,3 +217,12 @@ describe("null Feature geometry", () => {
     }
   });
 });
+
+describe("mutate", () => {
+  it("should not mutate the original object", (done) => {
+    var original = Object.assign({}, tg.point);
+    var parsed = gp(tg.point, 3);
+    assert.deepEqual(original, tg.point);
+    done();
+  });
+});

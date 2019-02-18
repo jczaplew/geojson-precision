@@ -31,40 +31,48 @@
       
       switch (obj.type) {
         case "Point":
-          obj.coordinates = point(obj.coordinates);
-          return obj;
+          return Object.assign({}, obj, {
+            coordinates: point(obj.coordinates)
+          });
         case "LineString":
         case "MultiPoint":
-          obj.coordinates = multi(obj.coordinates);
-          return obj;
+          return Object.assign({}, obj, {
+            coordinates: multi(obj.coordinates)
+          });
         case "Polygon":
         case "MultiLineString":
-          obj.coordinates = poly(obj.coordinates);
-          return obj;
+          return Object.assign({}, obj, {
+            coordinates: poly(obj.coordinates)
+          });
         case "MultiPolygon":
-          obj.coordinates = multiPoly(obj.coordinates);
-          return obj;
+          return Object.assign({}, obj, {
+            coordinates: multiPoly(obj.coordinates)
+          });
         case "GeometryCollection":
-          obj.geometries = obj.geometries.map(geometry);
-          return obj;
+          return Object.assign({}, obj, {
+            geometries: obj.geometries.map(geometry)
+          });
         default :
           return {};
       }
     }
 
     function feature(obj) {
-      obj.geometry = geometry(obj.geometry);
-      return obj
+      return Object.assign({}, obj, {
+        geometry: geometry(obj.geometry)
+      });
     }
 
     function featureCollection(f) {
-      f.features = f.features.map(feature);
-      return f;
+      return Object.assign({}, f, {
+        features: f.features.map(feature)
+      });
     }
 
     function geometryCollection(g) {
-      g.geometries = g.geometries.map(geometry);
-      return g;
+      return Object.assign({}, g, {
+        geometries: g.geometries.map(geometry)
+      });
     }
 
     if (!t) {
