@@ -13,7 +13,12 @@
     }
 
     function multi(l) {
-      return l.map(point);
+      return l.map(point).filter(function(current, index, array) {
+        const previous = array[index - 1]
+        return !(previous && 
+          current.length === previous.length && 
+          current.every((value, index) => value === previous[index]))
+      });
     }
 
     function poly(p) {
