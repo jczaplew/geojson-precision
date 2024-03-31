@@ -31,22 +31,32 @@
       
       switch (obj.type) {
         case "Point":
-          obj.coordinates = point(obj.coordinates);
-          return obj;
+          return {
+            ...obj,
+            coordinates: point(obj.coordinates),
+          }
         case "LineString":
         case "MultiPoint":
-          obj.coordinates = multi(obj.coordinates);
-          return obj;
+          return {
+            ...obj,
+            coordinates: multi(obj.coordinates),
+          }
         case "Polygon":
         case "MultiLineString":
-          obj.coordinates = poly(obj.coordinates);
-          return obj;
+          return {
+            ...obj,
+            coordinates: poly(obj.coordinates),
+          }
         case "MultiPolygon":
-          obj.coordinates = multiPoly(obj.coordinates);
-          return obj;
+          return {
+            ...obj,
+            coordinates: multiPoly(obj.coordinates),
+          }
         case "GeometryCollection":
-          obj.geometries = obj.geometries.map(geometry);
-          return obj;
+          return {
+            ...obj,
+            geometries: obj.geometries.map(geometry),
+          }
         default :
           return {};
       }
