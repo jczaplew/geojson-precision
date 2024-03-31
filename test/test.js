@@ -217,3 +217,13 @@ describe("null Feature geometry", () => {
     }
   });
 });
+
+describe("mutate", () => {
+  it("should not mutate the original object", (done) => {
+    const original = {...tg.point}
+    const parsed = gp(original, 3)
+
+    assert.notDeepEqual(original, parsed)
+    done();
+  });
+});
