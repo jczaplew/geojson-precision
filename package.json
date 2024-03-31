@@ -7,9 +7,9 @@
     "commander": "2.19.0"
   },
   "devDependencies": {
-    "assert": "1.4.1",
-    "@mapbox/geojsonhint": "2.1.0",
-    "mocha": "5.2.0",
+    "assert": "2.1.0",
+    "@mapbox/geojsonhint": "3.3.0",
+    "mocha": "10.4.0",
     "should": "13.2.3"
   },
   "scripts": {
