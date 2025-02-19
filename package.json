@@ -9,7 +9,7 @@
   "devDependencies": {
     "assert": "2.1.0",
     "@mapbox/geojsonhint": "3.3.0",
-    "mocha": "10.4.0",
+    "mocha": "10.8.2",
     "should": "13.2.3"
   },
   "scripts": {
